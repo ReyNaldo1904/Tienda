@@ -39,10 +39,26 @@
                         <form th:action="@{/categoria/guardar}" th:object="${categoria}"
                               method="POST" class="was-validated" enctype="multipart/form-data">
                             <div class="modal-body">
+
+                                <div class="mb-3">
+                                    <label for="categoria">[[#{producto.categoria}]]</label>
+                                    <input type="text" class="form-control" name="idCategoria" required="true"/>
+                                </div>
                                 <div class="mb-3">
                                     <label for="descripcion">[[#{categoria.descripcion}]]</label>
                                     <input type="text" class="form-control" name="descripcion" required="true"/>
                                 </div>
+
+                                <div class="mb-3">
+                                    <label for="detalle">[[#{producto.detalle}]]</label>
+                                    <textarea class="form-control" name="detalle" rows="3"></textarea>
+                                </div> 
+
+                                <div class="mb-3">
+                                    <label for="existencias">[[#{producto.existencias}]]</label>
+                                    <input type="number" class="form-control" name="existencias" required="true"/>
+                                </div>            
+                                
                                 <div class="mb-3">
                                     <label for="activo">[[#{categoria.activo}]]</label>
                                     <input class="form-check-input" type="checkbox" name="activo" id="activo"/>
@@ -133,11 +149,25 @@
                                             </div>
                                             <div class="card-body">
                                                 <div class="mb-3">
+                                                    <label for="categoria">[[#{producto.categoria}]]</label>
+                                                    <input type="text" class="form-control" name="idCategoria" />
+                                                </div>
+                                                  <div class="mb-3">
                                                     <label for="descripcion">[[#{categoria.descripcion}]]</label>
                                                     <input type="text" class="form-control" 
                                                            name="descripcion" th:field="*{descripcion}"
                                                            required="true">
                                                 </div>
+                                                <div class="mb-3">
+                                                    <label for="detalle">[[#{producto.detalle}]]</label>
+                                                    <textarea class="form-control" name="detalle" rows="3"></textarea>
+                                                </div> 
+
+                                                <div class="mb-3">
+                                                    <label for="existencias">[[#{producto.existencias}]]</label>
+                                                    <input type="number" class="form-control" name="existencias" />
+                                                </div> 
+
                                                 <div class="mb-3">
                                                     <label for="activo">[[#{categoria.activo}]]</label>
                                                     <input class="form-check-input" 
@@ -151,6 +181,7 @@
                                                     <input class="form-control" type="file" name="imagenFile"
                                                            onchange="readURL(this);" />
                                                     <img id="blah" th:src="@{${categoria.rutaImagen}}" alt="your image" height="200"/>
+
                                                 </div>
                                             </div>
                                         </div>
