@@ -38,12 +38,14 @@
                         </div> 
                         <form th:action="@{/categoria/guardar}" th:object="${categoria}"
                               method="POST" class="was-validated" enctype="multipart/form-data">
+                           
                             <div class="modal-body">
-
+                               
                                 <div class="mb-3">
-                                    <label for="categoria">[[#{producto.categoria}]]</label>
+                                    <label for="categoria">[[#{producto.categoria}]]</label>                               
                                     <input type="text" class="form-control" name="idCategoria" required="true"/>
                                 </div>
+                                    
                                 <div class="mb-3">
                                     <label for="descripcion">[[#{categoria.descripcion}]]</label>
                                     <input type="text" class="form-control" name="descripcion" required="true"/>
